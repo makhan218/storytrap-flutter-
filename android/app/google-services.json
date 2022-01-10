@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "77584886550",
+    "project_id": "storytrap-40b82",
+    "storage_bucket": "storytrap-40b82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77584886550:android:9b8c6d9e187d41ebbafe37",
+        "android_client_info": {
+          "package_name": "com.journalpost.storytrap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77584886550-kpbol90pkmdu43avp67vi5vchvhi7sim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSI4NnIXAt9Zsq97jC-N4qgBnnVfgH-m8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77584886550-kpbol90pkmdu43avp67vi5vchvhi7sim.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "77584886550-u4ocpg8jl4tc453mho23dbv2u9a93bk3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.journalpost.storytrap"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
