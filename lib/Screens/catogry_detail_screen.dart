@@ -4,6 +4,7 @@ import 'package:storytrapflutter/home_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:storytrapflutter/helper_files/read_story_manager.dart';
+import 'package:disposable_cached_images/disposable_cached_images.dart';
 
 class CatogryDetailScreen extends StatelessWidget {
   final CatogryScreenData catogryData;
@@ -67,20 +68,20 @@ class CatogryDetailScreen extends StatelessWidget {
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: CachedNetworkImage(
+        child: DisposableCachedImage.network(
           fit: BoxFit.cover,
           imageUrl: catogryData.stories[index].coverImage.coverImage,
           height: catogryData.screenHeight,
           // width: catogryData.screenWidth * 0.15,
-          progressIndicatorBuilder: (context, url, downloadProgress) =>
-              Container(
-            color: Colors.black12,
-          ),
+          // progressIndicatorBuilder: (context, url, downloadProgress) =>
+          //     Container(
+          //   color: Colors.black12,
+          // ),
           key: UniqueKey(),
-          cacheManager: customCacheManager,
+          // cacheManager: customCacheManager,
           // CircularProgressIndicator(
           //     value: downloadProgress.progress),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
+          // errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
       ),
     ));

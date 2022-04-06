@@ -1,3 +1,4 @@
+import 'package:disposable_cached_images/disposable_cached_images.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -26,26 +27,26 @@ class FeaturedStoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(34, 90, 34, 10),
+      padding: const EdgeInsets.fromLTRB(34, 90, 32, 10),
       child: Row(
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
               child: GestureDetector(
-                child: CachedNetworkImage(
+                child: DisposableCachedImage.network(
                   imageUrl: url,
                   width: width,
                   height: height * 0.3,
                   fit: BoxFit.fill,
-                  progressIndicatorBuilder: (context, url, downloadProgress) =>
-                      Container(
-                    color: Colors.black12,
-                  ),
+                  // progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  //     Container(
+                  //   color: Colors.black12,
+                  // ),
                   key: UniqueKey(),
-                  cacheManager: customCacheManager,
+                  // cacheManager: customCacheManager,
 
                   // CircularProgressIndicator(value: downloadProgress.progress),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  // errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
                 onTap: () {
                   // print(stories[index].indexToScrollTo);

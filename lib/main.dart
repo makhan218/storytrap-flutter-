@@ -16,10 +16,11 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'helper_files/stored_stories.dart';
 import 'helper_files/shared_prafrances.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:disposable_cached_images/disposable_cached_images.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'firebase_options.dart';
+// import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+// import 'package:firebase_analytics/firebase_analytics.dart';
 
 late Box box;
 Future<void> main() async {
@@ -31,9 +32,9 @@ Future<void> main() async {
   await SharedPref.init();
 
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
 
   // FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   // await analytics.logEvent(name: 'Test_Event', parameters: {
@@ -42,7 +43,7 @@ Future<void> main() async {
 
   // ReadStoryManager.deleteStoredStoryBox();
 
-  runApp(const MaterialApp(
+  runAppWithDisposableCachedImage(const MaterialApp(
     initialRoute: "/",
     onGenerateRoute: RouteGenerator.generateRoute,
     debugShowCheckedModeBanner: false,

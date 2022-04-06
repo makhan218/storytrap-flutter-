@@ -1,3 +1,4 @@
+import 'package:disposable_cached_images/disposable_cached_images.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -50,19 +51,19 @@ class RightMessageImage extends StatelessWidget {
                 child: Hero(
                   tag: "StoryScreenImage",
                   child: GestureDetector(
-                    child: CachedNetworkImage(
+                    child: DisposableCachedImage.network(
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context).size.width * 0.7,
                       height: MediaQuery.of(context).size.height * 0.3,
                       imageUrl: imageURL,
-                      progressIndicatorBuilder:
-                          (context, url, downloadProgress) => Container(
-                        color: Colors.black12,
-                      ),
+                      // progressIndicatorBuilder:
+                      //     (context, url, downloadProgress) => Container(
+                      //   color: Colors.black12,
+                      // ),
                       key: UniqueKey(),
-                      cacheManager: customCacheManager,
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
+                      // cacheManager: customCacheManager,
+                      // errorWidget: (context, url, error) =>
+                      // const Icon(Icons.error),
                     ),
                     onTap: () {
                       Navigator.of(context)

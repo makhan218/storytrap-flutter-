@@ -3,6 +3,7 @@ import 'package:storytrapflutter/Widgets/StoryScreenWidgets/storyscreen_data.dar
 import 'package:storytrapflutter/home_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:disposable_cached_images/disposable_cached_images.dart';
 
 // import 'package:hive_flutter/hive_flutter.dart';
 // import 'package:storytrapflutter/helper_files/stored_stories.dart';
@@ -132,20 +133,21 @@ class HorizontalList extends StatelessWidget {
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: CachedNetworkImage(
+                      child: DisposableCachedImage.network(
                         fit: BoxFit.fill,
                         imageUrl: stories[index].coverImage.coverImage,
                         width: screenWidth * 0.15,
-                        progressIndicatorBuilder:
-                            (context, url, downloadProgress) => Container(
-                          color: Colors.black12,
-                        ),
+                        isDynamicHeight: true,
+                        // progressIndicatorBuilder:
+                        //     (context, url, downloadProgress) => Container(
+                        //   color: Colors.black12,
+                        // ),
                         key: UniqueKey(),
-                        cacheManager: customCacheManager,
+                        // cacheManager: customCacheManager,
                         // CircularProgressIndicator(
                         //     value: downloadProgress.progress),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
+                        // errorWidget: (context, url, error) =>
+                        //     const Icon(Icons.error),
                       ),
                     ),
                   );

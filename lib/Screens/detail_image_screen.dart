@@ -1,3 +1,4 @@
+import 'package:disposable_cached_images/disposable_cached_images.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -33,19 +34,19 @@ class DetailImageScreen extends StatelessWidget {
         child: Center(
           child: Hero(
             tag: "StoryScreenImage",
-            child: CachedNetworkImage(
+            child: DisposableCachedImage.network(
               fit: BoxFit.fitWidth,
               imageUrl: imageUrl,
               width: MediaQuery.of(context).size.width,
-              progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  Container(
-                color: Colors.black12,
-              ),
+              // progressIndicatorBuilder: (context, url, downloadProgress) =>
+              //     Container(
+              //   color: Colors.black12,
+              // ),
               key: UniqueKey(),
-              cacheManager: customCacheManager,
+              // cacheManager: customCacheManager,
               // CircularProgressIndicator(
               //     value: downloadProgress.progress),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+              // errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
         ),
